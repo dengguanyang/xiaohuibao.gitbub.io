@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 <meta charset="UTF-8">
-<title>HTML5 Canvas酷炫烟花庆祝动画特效</title>
+<title>王者荣耀祝贺肖惠宝晋升星耀段位</title>
 
 <style>
   body {
@@ -29,8 +29,8 @@ class Shard {
     this.x = x;
     this.y = y;
     this.hue = hue;
-    this.lightness = 50;
-    this.size = 15 + Math.random() * 10;
+    this.lightness = 70;
+    this.size = 10 + Math.random() * 10;
     const angle = Math.random() * 2 * Math.PI;
     const blastSpeed = 1 + Math.random() * 6;
     this.xSpeed = Math.cos(angle) * blastSpeed;
@@ -75,7 +75,7 @@ class Shard {
       }
     } else
     {
-      this.ySpeed += 0.05;
+      this.ySpeed += 0.10;
       //this.xSpeed = lerp(this.xSpeed, 0, 0.1);
       this.size = lerp(this.size, 1, 0.05);
 
@@ -129,7 +129,7 @@ class Rocket {
 // INITIALIZATION
 const [c1, c2, c3] = document.querySelectorAll('canvas');
 const [ctx1, ctx2, ctx3] = [c1, c2, c3].map(c => c.getContext('2d'));
-let fontSize = 200;
+let fontSize = 180;
 const rockets = [];
 const shards = [];
 const targets = [];
@@ -137,8 +137,8 @@ const fidelity = 3;
 let counter = 0;
 c2.width = c3.width = window.innerWidth;
 c2.height = c3.height = window.innerHeight;
-ctx1.fillStyle = '#000';
-const text = 'Lanren';
+ctx1.fillStyle = '#FF4500';
+const text = '祝贺肖惠宝晋升星耀段位^--^';
 let textWidth = 99999999;
 
 while (textWidth > window.innerWidth) {
@@ -161,8 +161,8 @@ for (let i = 0, max = imgData.data.length; i < max; i += 4) {
   }
 }
 
-ctx3.fillStyle = '#FFF';
-ctx3.shadowColor = '#FFF';
+ctx3.fillStyle = '#FF4500';
+ctx3.shadowColor = '#FF4500';
 ctx3.shadowBlur = 25;
 
 // ANIMATION LOOP
@@ -170,9 +170,9 @@ ctx3.shadowBlur = 25;
   ctx2.fillStyle = "rgba(0, 0, 0, .1)";
   ctx2.fillRect(0, 0, c2.width, c2.height);
   //ctx2.clearRect(0, 0, c2.width, c2.height);
-  counter += 1;
+  counter += 2;
 
-  if (counter % 15 === 0) {
+  if (counter % 10 === 0) {
     rockets.push(new Rocket());
   }
   rockets.forEach((r, i) => {
